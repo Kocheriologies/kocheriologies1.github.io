@@ -1,0 +1,463 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title> - 终是蝶衣梦晓楼</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="一名聊城大学生命科学学院生物科学本科生,使用正则表达式正则表达式相关知识在编写处理字符串的程序或网页时，经常会有查找符合某些复杂规则的字符串的需要，正则表达式就是用于描述这些规则的工具，换句话说正则表达式是一种工具，它定义了字符串的匹配模,"> 
+    <meta name="author" content="Kocher"> 
+    <link rel="alternative" href="atom.xml" title="终是蝶衣梦晓楼" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">终是蝶衣梦晓楼</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle"></h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title"></h1>
+        <div class="stuff">
+            <span>一月 27, 2021</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <h2 id="使用正则表达式"><a href="#使用正则表达式" class="headerlink" title="使用正则表达式"></a>使用正则表达式</h2><h3 id="正则表达式相关知识"><a href="#正则表达式相关知识" class="headerlink" title="正则表达式相关知识"></a>正则表达式相关知识</h3><p>在编写处理字符串的程序或网页时，经常会有查找符合某些复杂规则的字符串的需要，正则表达式就是用于描述这些规则的工具，换句话说正则表达式是一种工具，它定义了字符串的匹配模式（如何检查一个字符串是否有跟某种模式匹配的部分或者从一个字符串中将与模式匹配的部分提取出来或者替换掉）。如果你在Windows操作系统中使用过文件查找并且在指定文件名时使用过通配符（*和?），那么正则表达式也是与之类似的用来进行文本匹配的工具，只不过比起通配符正则表达式更强大，它能更精确地描述你的需求（当然你付出的代价是书写一个正则表达式比打出一个通配符要复杂得多，要知道任何给你带来好处的东西都是有代价的，就如同学习一门编程语言一样），比如你可以编写一个正则表达式，用来查找所有以0开头，后面跟着2-3个数字，然后是一个连字号“-”，最后是7或8位数字的字符串（像028-12345678或0813-7654321），这不就是国内的座机号码吗。最初计算机是为了做数学运算而诞生的，处理的信息基本上都是数值，而今天我们在日常工作中处理的信息基本上都是文本数据，我们希望计算机能够识别和处理符合某些模式的文本，正则表达式就显得非常重要了。今天几乎所有的编程语言都提供了对正则表达式操作的支持，Python通过标准库中的re模块来支持正则表达式操作。</p>
+<p>我们可以考虑下面一个问题：我们从某个地方（可能是一个文本文件，也可能是网络上的一则新闻）获得了一个字符串，希望在字符串中找出手机号和座机号。当然我们可以设定手机号是11位的数字（注意并不是随机的11位数字，因为你没有见过“25012345678”这样的手机号吧）而座机号跟上一段中描述的模式相同，如果不使用正则表达式要完成这个任务就会很麻烦。</p>
+<p>关于正则表达式的相关知识，大家可以阅读一篇非常有名的博客叫<a target="_blank" rel="noopener" href="https://deerchao.net/tutorials/regex/regex.htm">《正则表达式30分钟入门教程》</a>，读完这篇文章后你就可以看懂下面的表格，这是我们对正则表达式中的一些基本符号进行的扼要总结。</p>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>解释</th>
+<th>示例</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>.</td>
+<td>匹配任意字符</td>
+<td>b.t</td>
+<td>可以匹配bat / but / b#t / b1t等</td>
+</tr>
+<tr>
+<td>\w</td>
+<td>匹配字母/数字/下划线</td>
+<td>b\wt</td>
+<td>可以匹配bat / b1t / b_t等<br>但不能匹配b#t</td>
+</tr>
+<tr>
+<td>\s</td>
+<td>匹配空白字符（包括\r、\n、\t等）</td>
+<td>love\syou</td>
+<td>可以匹配love you</td>
+</tr>
+<tr>
+<td>\d</td>
+<td>匹配数字</td>
+<td>\d\d</td>
+<td>可以匹配01 / 23 / 99等</td>
+</tr>
+<tr>
+<td>\b</td>
+<td>匹配单词的边界</td>
+<td>\bThe\b</td>
+<td></td>
+</tr>
+<tr>
+<td>^</td>
+<td>匹配字符串的开始</td>
+<td>^The</td>
+<td>可以匹配The开头的字符串</td>
+</tr>
+<tr>
+<td>$</td>
+<td>匹配字符串的结束</td>
+<td>.exe$</td>
+<td>可以匹配.exe结尾的字符串</td>
+</tr>
+<tr>
+<td>\W</td>
+<td>匹配非字母/数字/下划线</td>
+<td>b\Wt</td>
+<td>可以匹配b#t / b@t等<br>但不能匹配but / b1t / b_t等</td>
+</tr>
+<tr>
+<td>\S</td>
+<td>匹配非空白字符</td>
+<td>love\Syou</td>
+<td>可以匹配love#you等<br>但不能匹配love you</td>
+</tr>
+<tr>
+<td>\D</td>
+<td>匹配非数字</td>
+<td>\d\D</td>
+<td>可以匹配9a / 3# / 0F等</td>
+</tr>
+<tr>
+<td>\B</td>
+<td>匹配非单词边界</td>
+<td>\Bio\B</td>
+<td></td>
+</tr>
+<tr>
+<td>[]</td>
+<td>匹配来自字符集的任意单一字符</td>
+<td>[aeiou]</td>
+<td>可以匹配任一元音字母字符</td>
+</tr>
+<tr>
+<td>[^]</td>
+<td>匹配不在字符集中的任意单一字符</td>
+<td>[^aeiou]</td>
+<td>可以匹配任一非元音字母字符</td>
+</tr>
+<tr>
+<td>*</td>
+<td>匹配0次或多次</td>
+<td>\w*</td>
+<td></td>
+</tr>
+<tr>
+<td>+</td>
+<td>匹配1次或多次</td>
+<td>\w+</td>
+<td></td>
+</tr>
+<tr>
+<td>?</td>
+<td>匹配0次或1次</td>
+<td>\w?</td>
+<td></td>
+</tr>
+<tr>
+<td>{N}</td>
+<td>匹配N次</td>
+<td>\w{3}</td>
+<td></td>
+</tr>
+<tr>
+<td>{M,}</td>
+<td>匹配至少M次</td>
+<td>\w{3,}</td>
+<td></td>
+</tr>
+<tr>
+<td>{M,N}</td>
+<td>匹配至少M次至多N次</td>
+<td>\w{3,6}</td>
+<td></td>
+</tr>
+<tr>
+<td>|</td>
+<td>分支</td>
+<td>foo|bar</td>
+<td>可以匹配foo或者bar</td>
+</tr>
+<tr>
+<td>(?#)</td>
+<td>注释</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>(exp)</td>
+<td>匹配exp并捕获到自动命名的组中</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>(?&lt;name&gt;exp)</td>
+<td>匹配exp并捕获到名为name的组中</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>(?:exp)</td>
+<td>匹配exp但是不捕获匹配的文本</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>(?=exp)</td>
+<td>匹配exp前面的位置</td>
+<td>\b\w+(?=ing)</td>
+<td>可以匹配I’m dancing中的danc</td>
+</tr>
+<tr>
+<td>(?&lt;=exp)</td>
+<td>匹配exp后面的位置</td>
+<td>(?&lt;=\bdanc)\w+\b</td>
+<td>可以匹配I love dancing and reading中的第一个ing</td>
+</tr>
+<tr>
+<td>(?!exp)</td>
+<td>匹配后面不是exp的位置</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>(?&lt;!exp)</td>
+<td>匹配前面不是exp的位置</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>*?</td>
+<td>重复任意次，但尽可能少重复</td>
+<td>a.*b<br>a.*?b</td>
+<td>将正则表达式应用于aabab，前者会匹配整个字符串aabab，后者会匹配aab和ab两个字符串</td>
+</tr>
+<tr>
+<td>+?</td>
+<td>重复1次或多次，但尽可能少重复</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>??</td>
+<td>重复0次或1次，但尽可能少重复</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>{M,N}?</td>
+<td>重复M到N次，但尽可能少重复</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>{M,}?</td>
+<td>重复M次以上，但尽可能少重复</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>说明：</strong> 如果需要匹配的字符是正则表达式中的特殊字符，那么可以使用\进行转义处理，例如想匹配小数点可以写成\.就可以了，因为直接写.会匹配任意字符；同理，想匹配圆括号必须写成\(和\)，否则圆括号被视为正则表达式中的分组。</p>
+</blockquote>
+<h3 id="Python对正则表达式的支持"><a href="#Python对正则表达式的支持" class="headerlink" title="Python对正则表达式的支持"></a>Python对正则表达式的支持</h3><p>Python提供了re模块来支持正则表达式相关操作，下面是re模块中的核心函数。</p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>compile(pattern, flags=0)</td>
+<td>编译正则表达式返回正则表达式对象</td>
+</tr>
+<tr>
+<td>match(pattern, string, flags=0)</td>
+<td>用正则表达式匹配字符串 成功返回匹配对象 否则返回None</td>
+</tr>
+<tr>
+<td>search(pattern, string, flags=0)</td>
+<td>搜索字符串中第一次出现正则表达式的模式 成功返回匹配对象 否则返回None</td>
+</tr>
+<tr>
+<td>split(pattern, string, maxsplit=0, flags=0)</td>
+<td>用正则表达式指定的模式分隔符拆分字符串 返回列表</td>
+</tr>
+<tr>
+<td>sub(pattern, repl, string, count=0, flags=0)</td>
+<td>用指定的字符串替换原字符串中与正则表达式匹配的模式 可以用count指定替换的次数</td>
+</tr>
+<tr>
+<td>fullmatch(pattern, string, flags=0)</td>
+<td>match函数的完全匹配（从字符串开头到结尾）版本</td>
+</tr>
+<tr>
+<td>findall(pattern, string, flags=0)</td>
+<td>查找字符串所有与正则表达式匹配的模式 返回字符串的列表</td>
+</tr>
+<tr>
+<td>finditer(pattern, string, flags=0)</td>
+<td>查找字符串所有与正则表达式匹配的模式 返回一个迭代器</td>
+</tr>
+<tr>
+<td>purge()</td>
+<td>清除隐式编译的正则表达式的缓存</td>
+</tr>
+<tr>
+<td>re.I / re.IGNORECASE</td>
+<td>忽略大小写匹配标记</td>
+</tr>
+<tr>
+<td>re.M / re.MULTILINE</td>
+<td>多行匹配标记</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>说明：</strong> 上面提到的re模块中的这些函数，实际开发中也可以用正则表达式对象的方法替代对这些函数的使用，如果一个正则表达式需要重复的使用，那么先通过compile函数编译正则表达式并创建出正则表达式对象无疑是更为明智的选择。</p>
+</blockquote>
+<p>下面我们通过一系列的例子来告诉大家在Python中如何使用正则表达式。</p>
+<h4 id="例子1：验证输入用户名和QQ号是否有效并给出对应的提示信息。"><a href="#例子1：验证输入用户名和QQ号是否有效并给出对应的提示信息。" class="headerlink" title="例子1：验证输入用户名和QQ号是否有效并给出对应的提示信息。"></a>例子1：验证输入用户名和QQ号是否有效并给出对应的提示信息。</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">验证输入用户名和QQ号是否有效并给出对应的提示信息</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">要求：用户名必须由字母、数字或下划线构成且长度在6~20个字符之间，QQ号是5~12的数字且首位不能为0</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">    username = <span class="built_in">input</span>(<span class="string">&#x27;请输入用户名: &#x27;</span>)</span><br><span class="line">    qq = <span class="built_in">input</span>(<span class="string">&#x27;请输入QQ号: &#x27;</span>)</span><br><span class="line">    <span class="comment"># match函数的第一个参数是正则表达式字符串或正则表达式对象</span></span><br><span class="line">    <span class="comment"># 第二个参数是要跟正则表达式做匹配的字符串对象</span></span><br><span class="line">    m1 = re.match(<span class="string">r&#x27;^[0-9a-zA-Z_]&#123;6,20&#125;$&#x27;</span>, username)</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> m1:</span><br><span class="line">        print(<span class="string">&#x27;请输入有效的用户名.&#x27;</span>)</span><br><span class="line">    m2 = re.match(<span class="string">r&#x27;^[1-9]\d&#123;4,11&#125;$&#x27;</span>, qq)</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> m2:</span><br><span class="line">        print(<span class="string">&#x27;请输入有效的QQ号.&#x27;</span>)</span><br><span class="line">    <span class="keyword">if</span> m1 <span class="keyword">and</span> m2:</span><br><span class="line">        print(<span class="string">&#x27;你输入的信息是有效的!&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>提示：</strong> 上面在书写正则表达式时使用了“原始字符串”的写法（在字符串前面加上了r），所谓“原始字符串”就是字符串中的每个字符都是它原始的意义，说得更直接一点就是字符串中没有所谓的转义字符啦。因为正则表达式中有很多元字符和需要进行转义的地方，如果不使用原始字符串就需要将反斜杠写作\\，例如表示数字的\d得书写成\\d，这样不仅写起来不方便，阅读的时候也会很吃力。</p>
+</blockquote>
+<h4 id="例子2：从一段文字中提取出国内手机号码。"><a href="#例子2：从一段文字中提取出国内手机号码。" class="headerlink" title="例子2：从一段文字中提取出国内手机号码。"></a>例子2：从一段文字中提取出国内手机号码。</h4><p>下面这张图是截止到2017年底，国内三家运营商推出的手机号段。</p>
+<p><img src="./res/tel-start-number.png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">    <span class="comment"># 创建正则表达式对象 使用了前瞻和回顾来保证手机号前后不应该出现数字</span></span><br><span class="line">    pattern = re.<span class="built_in">compile</span>(<span class="string">r&#x27;(?&lt;=\D)1[34578]\d&#123;9&#125;(?=\D)&#x27;</span>)</span><br><span class="line">    sentence = <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    重要的事情说8130123456789遍，我的手机号是13512346789这个靓号，</span></span><br><span class="line"><span class="string">    不是15600998765，也是110或119，王大锤的手机号才是15600998765。</span></span><br><span class="line"><span class="string">    &#x27;&#x27;&#x27;</span></span><br><span class="line">    <span class="comment"># 查找所有匹配并保存到一个列表中</span></span><br><span class="line">    mylist = re.findall(pattern, sentence)</span><br><span class="line">    print(mylist)</span><br><span class="line">    print(<span class="string">&#x27;--------华丽的分隔线--------&#x27;</span>)</span><br><span class="line">    <span class="comment"># 通过迭代器取出匹配对象并获得匹配的内容</span></span><br><span class="line">    <span class="keyword">for</span> temp <span class="keyword">in</span> pattern.finditer(sentence):</span><br><span class="line">        print(temp.group())</span><br><span class="line">    print(<span class="string">&#x27;--------华丽的分隔线--------&#x27;</span>)</span><br><span class="line">    <span class="comment"># 通过search函数指定搜索位置找出所有匹配</span></span><br><span class="line">    m = pattern.search(sentence)</span><br><span class="line">    <span class="keyword">while</span> m:</span><br><span class="line">        print(m.group())</span><br><span class="line">        m = pattern.search(sentence, m.end())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>说明：</strong> 上面匹配国内手机号的正则表达式并不够好，因为像14开头的号码只有145或147，而上面的正则表达式并没有考虑这种情况，要匹配国内手机号，更好的正则表达式的写法是：<code>(?&lt;=\D)(1[38]\d&#123;9&#125;|14[57]\d&#123;8&#125;|15[0-35-9]\d&#123;8&#125;|17[678]\d&#123;8&#125;)(?=\D)</code>，国内最近好像有19和16开头的手机号了，但是这个暂时不在我们考虑之列。</p>
+</blockquote>
+<h4 id="例子3：替换字符串中的不良内容"><a href="#例子3：替换字符串中的不良内容" class="headerlink" title="例子3：替换字符串中的不良内容"></a>例子3：替换字符串中的不良内容</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">    sentence = <span class="string">&#x27;你丫是傻叉吗? 我操你大爷的. Fuck you.&#x27;</span></span><br><span class="line">    purified = re.sub(<span class="string">&#x27;[操肏艹]|fuck|shit|傻[比屄逼叉缺吊屌]|煞笔&#x27;</span>,</span><br><span class="line">                      <span class="string">&#x27;*&#x27;</span>, sentence, flags=re.IGNORECASE)</span><br><span class="line">    print(purified)  <span class="comment"># 你丫是*吗? 我*你大爷的. * you.</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>说明：</strong> re模块的正则表达式相关函数中都有一个flags参数，它代表了正则表达式的匹配标记，可以通过该标记来指定匹配时是否忽略大小写、是否进行多行匹配、是否显示调试信息等。如果需要为flags参数指定多个值，可以使用<a target="_blank" rel="noopener" href="http://www.runoob.com/python/python-operators.html#ysf5">按位或运算符</a>进行叠加，如<code>flags=re.I | re.M</code>。</p>
+</blockquote>
+<h4 id="例子4：拆分长字符串"><a href="#例子4：拆分长字符串" class="headerlink" title="例子4：拆分长字符串"></a>例子4：拆分长字符串</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">    poem = <span class="string">&#x27;窗前明月光，疑是地上霜。举头望明月，低头思故乡。&#x27;</span></span><br><span class="line">    sentence_list = re.split(<span class="string">r&#x27;[，。, .]&#x27;</span>, poem)</span><br><span class="line">    <span class="keyword">while</span> <span class="string">&#x27;&#x27;</span> <span class="keyword">in</span> sentence_list:</span><br><span class="line">        sentence_list.remove(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    print(sentence_list)  <span class="comment"># [&#x27;窗前明月光&#x27;, &#x27;疑是地上霜&#x27;, &#x27;举头望明月&#x27;, &#x27;低头思故乡&#x27;]</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<h3 id="后话"><a href="#后话" class="headerlink" title="后话"></a>后话</h3><p>如果要从事爬虫类应用的开发，那么正则表达式一定是一个非常好的助手，因为它可以帮助我们迅速的从网页代码中发现某种我们指定的模式并提取出我们需要的信息，当然对于初学者来收，要编写一个正确的适当的正则表达式可能并不是一件容易的事情（当然有些常用的正则表达式可以直接在网上找找），所以实际开发爬虫应用的时候，有很多人会选择<a target="_blank" rel="noopener" href="https://www.crummy.com/software/BeautifulSoup/">Beautiful Soup</a>或<a target="_blank" rel="noopener" href="http://lxml.de/">Lxml</a>来进行匹配和信息的提取，前者简单方便但是性能较差，后者既好用性能也好，但是安装稍嫌麻烦，这些内容我们会在后期的爬虫专题中为大家介绍。</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='true'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

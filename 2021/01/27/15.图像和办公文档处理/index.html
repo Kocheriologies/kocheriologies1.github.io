@@ -1,0 +1,253 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title> - 终是蝶衣梦晓楼</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="一名聊城大学生命科学学院生物科学本科生,图像和办公文档处理用程序来处理图像和办公文档经常出现在实际开发中，Python的标准库中虽然没有直接支持这些操作的模块，但我们可以通过Python生态圈中的第三方模块来完成这些操作。
+操作图像计算机,"> 
+    <meta name="author" content="Kocher"> 
+    <link rel="alternative" href="atom.xml" title="终是蝶衣梦晓楼" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">终是蝶衣梦晓楼</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle"></h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title"></h1>
+        <div class="stuff">
+            <span>一月 27, 2021</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <h2 id="图像和办公文档处理"><a href="#图像和办公文档处理" class="headerlink" title="图像和办公文档处理"></a>图像和办公文档处理</h2><p>用程序来处理图像和办公文档经常出现在实际开发中，Python的标准库中虽然没有直接支持这些操作的模块，但我们可以通过Python生态圈中的第三方模块来完成这些操作。</p>
+<h3 id="操作图像"><a href="#操作图像" class="headerlink" title="操作图像"></a>操作图像</h3><h4 id="计算机图像相关知识"><a href="#计算机图像相关知识" class="headerlink" title="计算机图像相关知识"></a>计算机图像相关知识</h4><ol>
+<li><p>颜色。如果你有使用颜料画画的经历，那么一定知道混合红、黄、蓝三种颜料可以得到其他的颜色，事实上这三种颜色就是被我们称为美术三原色的东西，它们是不能再分解的基本颜色。在计算机中，我们可以将红、绿、蓝三种色光以不同的比例叠加来组合成其他的颜色，因此这三种颜色就是色光三原色，所以我们通常会将一个颜色表示为一个RGB值或RGBA值（其中的A表示Alpha通道，它决定了透过这个图像的像素，也就是透明度）。</p>
+<table>
+<thead>
+<tr>
+<th align="center">名称</th>
+<th align="center">RGBA值</th>
+<th align="center">名称</th>
+<th align="center">RGBA值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">White</td>
+<td align="center">(255, 255, 255, 255)</td>
+<td align="center">Red</td>
+<td align="center">(255, 0, 0, 255)</td>
+</tr>
+<tr>
+<td align="center">Green</td>
+<td align="center">(0, 255, 0, 255)</td>
+<td align="center">Blue</td>
+<td align="center">(0, 0, 255, 255)</td>
+</tr>
+<tr>
+<td align="center">Gray</td>
+<td align="center">(128, 128, 128, 255)</td>
+<td align="center">Yellow</td>
+<td align="center">(255, 255, 0, 255)</td>
+</tr>
+<tr>
+<td align="center">Black</td>
+<td align="center">(0, 0, 0, 255)</td>
+<td align="center">Purple</td>
+<td align="center">(128, 0, 128, 255)</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>像素。对于一个由数字序列表示的图像来说，最小的单位就是图像上单一颜色的小方格，这些小方块都有一个明确的位置和被分配的色彩数值，而这些一小方格的颜色和位置决定了该图像最终呈现出来的样子，它们是不可分割的单位，我们通常称之为像素（pixel）。每一个图像都包含了一定量的像素，这些像素决定图像在屏幕上所呈现的大小。</p>
+</li>
+</ol>
+<h4 id="用Pillow操作图像"><a href="#用Pillow操作图像" class="headerlink" title="用Pillow操作图像"></a>用Pillow操作图像</h4><p>Pillow是由从著名的Python图像处理库PIL发展出来的一个分支，通过Pillow可以实现图像压缩和图像处理等各种操作。可以使用下面的命令来安装Pillow。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pillow</span><br></pre></td></tr></table></figure>
+<p>Pillow中最为重要的是Image类，读取和处理图像都要通过这个类来完成。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>image = Image.<span class="built_in">open</span>(<span class="string">&#x27;./res/guido.jpg&#x27;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>image.<span class="built_in">format</span>, image.size, image.mode</span><br><span class="line">(<span class="string">&#x27;JPEG&#x27;</span>, (<span class="number">500</span>, <span class="number">750</span>), <span class="string">&#x27;RGB&#x27;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>image.show()</span><br></pre></td></tr></table></figure>
+<p><img src="./res/image-show.png"></p>
+<ol>
+<li><p>剪裁图像</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>image = Image.<span class="built_in">open</span>(<span class="string">&#x27;./res/guido.jpg&#x27;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>rect = <span class="number">80</span>, <span class="number">20</span>, <span class="number">310</span>, <span class="number">360</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>image.crop(rect).show()</span><br></pre></td></tr></table></figure>
+<p><img src="./res/image-crop.png"></p>
+</li>
+<li><p>生成缩略图</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>image = Image.<span class="built_in">open</span>(<span class="string">&#x27;./res/guido.jpg&#x27;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>size = <span class="number">128</span>, <span class="number">128</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>image.thumbnail(size)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>image.show()</span><br></pre></td></tr></table></figure>
+<p><img src="./res/image-thumbnail.png"></p>
+</li>
+<li><p>缩放和黏贴图像</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>image1 = Image.<span class="built_in">open</span>(<span class="string">&#x27;./res/luohao.png&#x27;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>image2 = Image.<span class="built_in">open</span>(<span class="string">&#x27;./res/guido.jpg&#x27;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>rect = <span class="number">80</span>, <span class="number">20</span>, <span class="number">310</span>, <span class="number">360</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>guido_head = image2.crop(rect)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>width, height = guido_head.size</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>image1.paste(guido_head.resize((<span class="built_in">int</span>(width / <span class="number">1.5</span>), <span class="built_in">int</span>(height / <span class="number">1.5</span>))), (<span class="number">172</span>, <span class="number">40</span>))</span><br></pre></td></tr></table></figure>
+<p><img src="./res/image-paste.png"></p>
+</li>
+<li><p>旋转和翻转</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>image = Image.<span class="built_in">open</span>(<span class="string">&#x27;./res/guido.png&#x27;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>image.rotate(<span class="number">180</span>).show()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>image.transpose(Image.FLIP_LEFT_RIGHT).show()</span><br></pre></td></tr></table></figure>
+<p><img src="./res/image-rotate.png"></p>
+<p><img src="./res/image-transpose.png"></p>
+</li>
+<li><p>操作像素</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>image = Image.<span class="built_in">open</span>(<span class="string">&#x27;./res/guido.jpg&#x27;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">80</span>, <span class="number">310</span>):</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">for</span> y <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">20</span>, <span class="number">360</span>):</span><br><span class="line"><span class="meta">... </span>        image.putpixel((x, y), (<span class="number">128</span>, <span class="number">128</span>, <span class="number">128</span>))</span><br><span class="line"><span class="meta">... </span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>image.show()</span><br></pre></td></tr></table></figure>
+<p><img src="./res/image-putpixel.png"></p>
+</li>
+<li><p>滤镜效果</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> PIL <span class="keyword">import</span> Image, ImageFilter</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>image = Image.<span class="built_in">open</span>(<span class="string">&#x27;./res/guido.jpg&#x27;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>image.<span class="built_in">filter</span>(ImageFilter.CONTOUR).show()</span><br></pre></td></tr></table></figure>
+<p><img src="./res/image-filter.png"></p>
+</li>
+</ol>
+<h3 id="处理Excel电子表格"><a href="#处理Excel电子表格" class="headerlink" title="处理Excel电子表格"></a>处理Excel电子表格</h3><p>Python的openpyxl模块让我们可以在Python程序中读取和修改Excel电子表格，由于微软从Office 2007开始使用了新的文件格式，这使得Office Excel和LibreOffice Calc、OpenOffice Calc是完全兼容的，这就意味着openpyxl模块也能处理来自这些软件生成的电子表格。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> openpyxl <span class="keyword">import</span> Workbook</span><br><span class="line"></span><br><span class="line">wb = Workbook()</span><br><span class="line">ws = wb.active</span><br><span class="line"></span><br><span class="line">ws[<span class="string">&#x27;A1&#x27;</span>] = <span class="number">42</span></span><br><span class="line">ws.append([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])</span><br><span class="line">ws[<span class="string">&#x27;A2&#x27;</span>] = datetime.datetime.now()</span><br><span class="line"></span><br><span class="line">wb.save(<span class="string">&quot;sample.xlsx&quot;</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="处理Word文档"><a href="#处理Word文档" class="headerlink" title="处理Word文档"></a>处理Word文档</h3><p>利用python-docx模块，Python可以创建和修改Word文档，当然这里的Word文档不仅仅是指通过微软的Office软件创建的扩展名为docx的文档，LibreOffice Writer和OpenOffice Writer都是免费的字处理软件。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> docx <span class="keyword">import</span> Document</span><br><span class="line"><span class="keyword">from</span> docx.shared <span class="keyword">import</span> Inches</span><br><span class="line"></span><br><span class="line">document = Document()</span><br><span class="line"></span><br><span class="line">document.add_heading(<span class="string">&#x27;Document Title&#x27;</span>, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">p = document.add_paragraph(<span class="string">&#x27;A plain paragraph having some &#x27;</span>)</span><br><span class="line">p.add_run(<span class="string">&#x27;bold&#x27;</span>).bold = <span class="literal">True</span></span><br><span class="line">p.add_run(<span class="string">&#x27; and some &#x27;</span>)</span><br><span class="line">p.add_run(<span class="string">&#x27;italic.&#x27;</span>).italic = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">document.add_heading(<span class="string">&#x27;Heading, level 1&#x27;</span>, level=<span class="number">1</span>)</span><br><span class="line">document.add_paragraph(<span class="string">&#x27;Intense quote&#x27;</span>, style=<span class="string">&#x27;Intense Quote&#x27;</span>)</span><br><span class="line"></span><br><span class="line">document.add_paragraph(</span><br><span class="line">    <span class="string">&#x27;first item in unordered list&#x27;</span>, style=<span class="string">&#x27;List Bullet&#x27;</span></span><br><span class="line">)</span><br><span class="line">document.add_paragraph(</span><br><span class="line">    <span class="string">&#x27;first item in ordered list&#x27;</span>, style=<span class="string">&#x27;List Number&#x27;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">document.add_picture(<span class="string">&#x27;monty-truth.png&#x27;</span>, width=Inches(<span class="number">1.25</span>))</span><br><span class="line"></span><br><span class="line">records = (</span><br><span class="line">    (<span class="number">3</span>, <span class="string">&#x27;101&#x27;</span>, <span class="string">&#x27;Spam&#x27;</span>),</span><br><span class="line">    (<span class="number">7</span>, <span class="string">&#x27;422&#x27;</span>, <span class="string">&#x27;Eggs&#x27;</span>),</span><br><span class="line">    (<span class="number">4</span>, <span class="string">&#x27;631&#x27;</span>, <span class="string">&#x27;Spam, spam, eggs, and spam&#x27;</span>)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">table = document.add_table(rows=<span class="number">1</span>, cols=<span class="number">3</span>)</span><br><span class="line">hdr_cells = table.rows[<span class="number">0</span>].cells</span><br><span class="line">hdr_cells[<span class="number">0</span>].text = <span class="string">&#x27;Qty&#x27;</span></span><br><span class="line">hdr_cells[<span class="number">1</span>].text = <span class="string">&#x27;Id&#x27;</span></span><br><span class="line">hdr_cells[<span class="number">2</span>].text = <span class="string">&#x27;Desc&#x27;</span></span><br><span class="line"><span class="keyword">for</span> qty, <span class="built_in">id</span>, desc <span class="keyword">in</span> records:</span><br><span class="line">    row_cells = table.add_row().cells</span><br><span class="line">    row_cells[<span class="number">0</span>].text = <span class="built_in">str</span>(qty)</span><br><span class="line">    row_cells[<span class="number">1</span>].text = <span class="built_in">id</span></span><br><span class="line">    row_cells[<span class="number">2</span>].text = desc</span><br><span class="line"></span><br><span class="line">document.add_page_break()</span><br><span class="line"></span><br><span class="line">document.save(<span class="string">&#x27;demo.docx&#x27;</span>)</span><br></pre></td></tr></table></figure>
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='true'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

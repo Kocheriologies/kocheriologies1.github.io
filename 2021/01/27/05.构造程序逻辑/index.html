@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title> - 终是蝶衣梦晓楼</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="一名聊城大学生命科学学院生物科学本科生,构造程序逻辑学完前面的几个章节后，我觉得有必要在这里带大家做一些练习来巩固之前所学的知识，虽然迄今为止我们学习的内容只是Python的冰山一角，但是这些内容已经足够我们来构建程序中的逻辑。对于编程语,"> 
+    <meta name="author" content="Kocher"> 
+    <link rel="alternative" href="atom.xml" title="终是蝶衣梦晓楼" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">终是蝶衣梦晓楼</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle"></h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title"></h1>
+        <div class="stuff">
+            <span>一月 27, 2021</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <h2 id="构造程序逻辑"><a href="#构造程序逻辑" class="headerlink" title="构造程序逻辑"></a>构造程序逻辑</h2><p>学完前面的几个章节后，我觉得有必要在这里带大家做一些练习来巩固之前所学的知识，虽然迄今为止我们学习的内容只是Python的冰山一角，但是这些内容已经足够我们来构建程序中的逻辑。对于编程语言的初学者来说，在学习了Python的核心语言元素（变量、类型、运算符、表达式、分支结构、循环结构等）之后，必须做的一件事情就是尝试用所学知识去解决现实中的问题，换句话说就是锻炼自己把用人类自然语言描述的算法（解决问题的方法和步骤）翻译成Python代码的能力，而这件事情必须通过大量的练习才能达成。</p>
+<p>我们在本章为大家整理了一些经典的案例和习题，希望通过这些例子，一方面帮助大家巩固之前所学的Python知识，另一方面帮助大家了解如何建立程序中的逻辑以及如何运用一些简单的算法解决现实中的问题。</p>
+<h3 id="经典的例子"><a href="#经典的例子" class="headerlink" title="经典的例子"></a>经典的例子</h3><ol>
+<li><p>寻找<strong>水仙花数</strong>。</p>
+<blockquote>
+<p><strong>说明</strong>：水仙花数也被称为超完全数字不变数、自恋数、自幂数、阿姆斯特朗数，它是一个3位数，该数字每个位上数字的立方之和正好等于它本身，例如：$1^3 + 5^3+ 3^3=153$。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">找出所有水仙花数</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Version: 0.1</span></span><br><span class="line"><span class="string">Author: 骆昊</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> num <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100</span>, <span class="number">1000</span>):</span><br><span class="line">    low = num % <span class="number">10</span></span><br><span class="line">    mid = num // <span class="number">10</span> % <span class="number">10</span></span><br><span class="line">    high = num // <span class="number">100</span></span><br><span class="line">    <span class="keyword">if</span> num == low ** <span class="number">3</span> + mid ** <span class="number">3</span> + high ** <span class="number">3</span>:</span><br><span class="line">        print(num)</span><br></pre></td></tr></table></figure>
+<p>在上面的代码中，我们通过整除和求模运算分别找出了一个三位数的个位、十位和百位，这种小技巧在实际开发中还是常用的。用类似的方法，我们还可以实现将一个正整数反转，例如：将12345变成54321，代码如下所示。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">正整数的反转</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Version: 0.1</span></span><br><span class="line"><span class="string">Author: 骆昊</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">num = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&#x27;num = &#x27;</span>))</span><br><span class="line">reversed_num = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> num &gt; <span class="number">0</span>:</span><br><span class="line">    reversed_num = reversed_num * <span class="number">10</span> + num % <span class="number">10</span></span><br><span class="line">    num //= <span class="number">10</span></span><br><span class="line">print(reversed_num)</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>百钱百鸡</strong>问题。</p>
+<blockquote>
+<p><strong>说明</strong>：百钱百鸡是我国古代数学家<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%BC%A0%E4%B8%98%E5%BB%BA/10246238">张丘建</a>在《算经》一书中提出的数学问题：鸡翁一值钱五，鸡母一值钱三，鸡雏三值钱一。百钱买百鸡，问鸡翁、鸡母、鸡雏各几何？翻译成现代文是：公鸡5元一只，母鸡3元一只，小鸡1元三只，用100块钱买一百只鸡，问公鸡、母鸡、小鸡各有多少只？</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">《百钱百鸡》问题</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Version: 0.1</span></span><br><span class="line"><span class="string">Author: 骆昊</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="number">20</span>):</span><br><span class="line">    <span class="keyword">for</span> y <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="number">33</span>):</span><br><span class="line">        z = <span class="number">100</span> - x - y</span><br><span class="line">        <span class="keyword">if</span> <span class="number">5</span> * x + <span class="number">3</span> * y + z / <span class="number">3</span> == <span class="number">100</span>:</span><br><span class="line">            print(<span class="string">&#x27;公鸡: %d只, 母鸡: %d只, 小鸡: %d只&#x27;</span> % (x, y, z))</span><br></pre></td></tr></table></figure>
+<p>上面使用的方法叫做<strong>穷举法</strong>，也称为<strong>暴力搜索法</strong>，这种方法通过一项一项的列举备选解决方案中所有可能的候选项并检查每个候选项是否符合问题的描述，最终得到问题的解。这种方法看起来比较笨拙，但对于运算能力非常强大的计算机来说，通常都是一个可行的甚至是不错的选择，而且问题的解如果存在，这种方法一定能够找到它。</p>
+</li>
+<li><p><strong>CRAPS赌博游戏</strong>。</p>
+<blockquote>
+<p><strong>说明</strong>：CRAPS又称花旗骰，是美国拉斯维加斯非常受欢迎的一种的桌上赌博游戏。该游戏使用两粒骰子，玩家通过摇两粒骰子获得点数进行游戏。简单的规则是：玩家第一次摇骰子如果摇出了7点或11点，玩家胜；玩家第一次如果摇出2点、3点或12点，庄家胜；其他点数玩家继续摇骰子，如果玩家摇出了7点，庄家胜；如果玩家摇出了第一次摇的点数，玩家胜；其他点数，玩家继续要骰子，直到分出胜负。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">Craps赌博游戏</span></span><br><span class="line"><span class="string">我们设定玩家开始游戏时有1000元的赌注</span></span><br><span class="line"><span class="string">游戏结束的条件是玩家输光所有的赌注</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Version: 0.1</span></span><br><span class="line"><span class="string">Author: 骆昊</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> randint</span><br><span class="line"></span><br><span class="line">money = <span class="number">1000</span></span><br><span class="line"><span class="keyword">while</span> money &gt; <span class="number">0</span>:</span><br><span class="line">    print(<span class="string">&#x27;你的总资产为:&#x27;</span>, money)</span><br><span class="line">    needs_go_on = <span class="literal">False</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        debt = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&#x27;请下注: &#x27;</span>))</span><br><span class="line">        <span class="keyword">if</span> <span class="number">0</span> &lt; debt &lt;= money:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    first = randint(<span class="number">1</span>, <span class="number">6</span>) + randint(<span class="number">1</span>, <span class="number">6</span>)</span><br><span class="line">    print(<span class="string">&#x27;玩家摇出了%d点&#x27;</span> % first)</span><br><span class="line">    <span class="keyword">if</span> first == <span class="number">7</span> <span class="keyword">or</span> first == <span class="number">11</span>:</span><br><span class="line">        print(<span class="string">&#x27;玩家胜!&#x27;</span>)</span><br><span class="line">        money += debt</span><br><span class="line">    <span class="keyword">elif</span> first == <span class="number">2</span> <span class="keyword">or</span> first == <span class="number">3</span> <span class="keyword">or</span> first == <span class="number">12</span>:</span><br><span class="line">        print(<span class="string">&#x27;庄家胜!&#x27;</span>)</span><br><span class="line">        money -= debt</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        needs_go_on = <span class="literal">True</span></span><br><span class="line">    <span class="keyword">while</span> needs_go_on:</span><br><span class="line">        needs_go_on = <span class="literal">False</span></span><br><span class="line">        current = randint(<span class="number">1</span>, <span class="number">6</span>) + randint(<span class="number">1</span>, <span class="number">6</span>)</span><br><span class="line">        print(<span class="string">&#x27;玩家摇出了%d点&#x27;</span> % current)</span><br><span class="line">        <span class="keyword">if</span> current == <span class="number">7</span>:</span><br><span class="line">            print(<span class="string">&#x27;庄家胜&#x27;</span>)</span><br><span class="line">            money -= debt</span><br><span class="line">        <span class="keyword">elif</span> current == first:</span><br><span class="line">            print(<span class="string">&#x27;玩家胜&#x27;</span>)</span><br><span class="line">            money += debt</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            needs_go_on = <span class="literal">True</span></span><br><span class="line">print(<span class="string">&#x27;你破产了, 游戏结束!&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>###有用的练习 </p>
+</li>
+<li><p>生成<strong>斐波那契数列</strong>的前20个数。</p>
+<blockquote>
+<p><strong>说明</strong>：斐波那契数列（Fibonacci sequence），又称黄金分割数列，是意大利数学家莱昂纳多·斐波那契（Leonardoda Fibonacci）在《计算之书》中提出一个在理想假设条件下兔子成长率的问题而引入的数列，所以这个数列也被戏称为&quot;兔子数列&quot;。斐波那契数列的特点是数列的前两个数都是1，从第三个数开始，每个数都是它前面两个数的和，形如：1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, …。斐波那契数列在现代物理、准晶体结构、化学等领域都有直接的应用。</p>
+</blockquote>
+</li>
+<li><p>找出10000以内的<strong>完美数</strong>。</p>
+<blockquote>
+<p><strong>说明</strong>：完美数又称为完全数或完备数，它的所有的真因子（即除了自身以外的因子）的和（即因子函数）恰好等于它本身。例如：6（$6=1+2+3$）和28（$28=1+2+4+7+14$）就是完美数。完美数有很多神奇的特性，有兴趣的可以自行了解。</p>
+</blockquote>
+</li>
+<li><p>输出<strong>100以内所有的素数</strong>。</p>
+<blockquote>
+<p><strong>说明</strong>：素数指的是只能被1和自身整除的正整数（不包括1）。</p>
+</blockquote>
+</li>
+</ol>
+<p>上面练习的参考答案在本章对应的代码目录中，如果需要帮助请读者自行查看参考答案。</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='true'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
